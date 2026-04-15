@@ -34,12 +34,12 @@
 
 ## Скриншоты
 
-```md
-![Главный экран](screenshots/1.png)
-![График](screenshots/2.png)
-![Статистика](screenshots/3.png)
-![Настройки](screenshots/4.png)
-```
+<p align="center">
+  <img src="screenshots/1.png" alt="1" width="180" />
+  <img src="screenshots/2.png" alt="2" width="180" />
+  <img src="screenshots/3.png" alt="3" width="180" />
+  <img src="screenshots/4.png" alt="4" width="180" />
+</p>
 
 ## Сборка проекта
 
