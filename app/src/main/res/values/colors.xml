@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="widget_surface">#FFF7FAFC</color>
+    <color name="widget_stroke">#1A0F172A</color>
+    <color name="widget_chip_bg">#FFF1F5F9</color>
+    <color name="widget_button_bg">#FFE2E8F0</color>
+    <color name="widget_text_primary">#FF0F172A</color>
+    <color name="widget_text_secondary">#FF475569</color>
+    <color name="widget_badge_text">#FFFFFFFF</color>
+    <color name="widget_positive">#FF16A34A</color>
+    <color name="widget_negative">#FFDC2626</color>
+    <color name="widget_warning">#FFF59E0B</color>
+    <color name="widget_line_grid">#1F64748B</color>
+    <color name="widget_fill_tint">#2660A5FA</color>
+</resources>

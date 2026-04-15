@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/pref_category_appearance"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:key="pref_theme_mode"
+            android:title="@string/pref_theme_title"
+            android:entries="@array/theme_mode_entries"
+            android:entryValues="@array/theme_mode_values"
+            android:defaultValue="system"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="pref_units"
+            android:title="@string/pref_title_units"
+            android:entries="@array/units_entries"
+            android:entryValues="@array/units_values"
+            android:defaultValue="metric"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_recording"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="pref_recording_enabled"
+            android:title="@string/pref_recording_title"
+            android:summary="@string/pref_recording_state_off"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_adaptive_recording_enabled"
+            android:title="@string/pref_adaptive_recording_title"
+            android:summary="@string/pref_adaptive_recording_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_interval_ms"
+            android:title="@string/pref_title_interval"
+            android:summary="@string/pref_interval_summary_placeholder"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_history_size"
+            android:title="@string/pref_title_history"
+            android:summary="@string/pref_history_summary_placeholder"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_autostart"
+            android:title="@string/pref_autostart_title"
+            android:summary="@string/pref_autostart_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_calibration"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="pref_open_calibration"
+            android:title="@string/pref_title_ref_altitude"
+            android:summary="@string/pref_set_current_alt_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_trip"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="pref_trip_mode_enabled"
+            android:title="@string/pref_trip_mode_title"
+            android:summary="@string/pref_trip_mode_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_trip_suggestion_enabled"
+            android:title="@string/pref_trip_suggestion_title"
+            android:summary="@string/pref_trip_suggestion_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_notifications_group"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:key="pref_notification_mode"
+            android:title="@string/pref_notifications_mode"
+            android:entries="@array/notification_mode_entries"
+            android:entryValues="@array/notification_mode_values"
+            android:defaultValue="off"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_notification_mode_description"
+            android:summary="@string/pref_notifications_mode_description_off"
+            android:selectable="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_notification_simple_drop_enabled"
+            android:title="@string/pref_notification_simple_drop"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_notification_simple_rise_enabled"
+            android:title="@string/pref_notification_simple_rise"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:key="pref_notification_simple_threshold"
+            android:title="@string/pref_notification_simple_threshold"
+            android:summary="@string/pref_notification_simple_threshold_summary"
+            android:defaultValue="1.0"
+            android:inputType="numberDecimal|numberSigned"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="pref_notification_simple_window_hours"
+            android:title="@string/pref_notification_simple_window"
+            android:summary="@string/pref_notification_simple_window_summary"
+            android:entries="@array/notification_simple_window_entries"
+            android:entryValues="@array/notification_simple_window_values"
+            android:defaultValue="3"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="pref_notification_sensitivity"
+            android:title="@string/pref_notification_sensitivity"
+            android:entries="@array/notification_sensitivity_entries"
+            android:entryValues="@array/notification_sensitivity_values"
+            android:defaultValue="medium"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_notification_sensitivity_description"
+            android:summary="@string/pref_notification_sensitivity_description_medium"
+            android:selectable="false"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="pref_notification_min_interval_min"
+            android:title="@string/pref_notification_min_interval"
+            android:entries="@array/notification_min_interval_entries"
+            android:entryValues="@array/notification_min_interval_values"
+            android:defaultValue="180"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="pref_silent_mode_kind"
+            android:title="@string/pref_silent_mode_title"
+            android:entries="@array/silent_mode_kind_entries"
+            android:entryValues="@array/silent_mode_kind_values"
+            android:defaultValue="off"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_silent_mode_enabled"
+            android:title="@string/pref_silent_mode_enabled"
+            android:summary="@string/pref_silent_mode_enabled_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_silent_mode_schedule"
+            android:title="@string/pref_silent_mode_schedule"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_data"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="pref_export_csv"
+            android:title="@string/action_export_csv"
+            android:summary="@string/export_summary"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_clear_db"
+            android:title="@string/pref_clear_db_title"
+            android:summary="@string/pref_clear_db_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_system"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="pref_battery_whitelist"
+            android:title="@string/pref_battery_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_background_help"
+            android:title="@string/pref_background_help_title"
+            android:summary="@string/pref_background_help_summary"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_open_status"
+            android:title="@string/pref_open_status_title"
+            android:summary="@string/pref_open_status_summary"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_hide_status_bar"
+            android:title="@string/pref_hide_status_bar_title"
+            android:summary="@string/pref_hide_status_bar_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="pref_report_problem"
+            android:title="@string/pref_report_problem_title"
+            android:summary="@string/pref_report_problem_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

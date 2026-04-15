@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="10dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="?attr/colorOutline"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="12dp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupHeaderMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="8dp"
+                    app:singleLine="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipHeaderMode"
+                        style="@style/Widget.Material3.Chip.Assist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="false"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/graph_header_stats"
+                        app:chipIcon="@drawable/ic_graph_stats"
+                        app:chipIconVisible="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipHeaderEvents"
+                        style="@style/Widget.Material3.Chip.Assist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="false"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/graph_header_events_empty"
+                        app:chipIcon="@drawable/ic_graph_timeline"
+                        app:chipIconVisible="true" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip1h"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="3600000"
+                    android:text="@string/range_1h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip3h"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="10800000"
+                    android:text="@string/range_3h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip6h"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="21600000"
+                    android:text="@string/range_6h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip12h"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="43200000"
+                    android:text="@string/range_12h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip24h"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="86400000"
+                    android:text="@string/range_24h" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip7d"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="604800000"
+                    android:text="@string/range_7d" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip30d"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="2592000000"
+                    android:text="@string/range_30d" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCustom"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="CUSTOM"
+                    android:text="@string/range_custom" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="?attr/colorOutline"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/graph_section_display"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnModePressure"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minWidth="0dp"
+                        android:text="@string/mode_pressure"
+                        android:textAllCaps="false" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnModeAltitude"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minWidth="0dp"
+                        android:text="@string/mode_altitude"
+                        android:textAllCaps="false" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/emptyContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_trend_arrow"
+                android:tint="?attr/colorOnSurface" />
+
+            <TextView
+                android:id="@+id/emptyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/graph_no_data"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emptySubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:alpha="0.8"
+                android:gravity="center"
+                android:text="@string/graph_empty_subtitle"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartRecording"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/graph_empty_btn_start" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGo1h"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/graph_empty_btn_1h" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenSettings"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/graph_empty_btn_settings" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="?attr/colorOutline"
+        app:strokeWidth="1dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

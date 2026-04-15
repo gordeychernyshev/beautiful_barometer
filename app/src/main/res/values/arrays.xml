@@ -1,0 +1,114 @@
+<!-- app/src/main/res/values/arrays.xml -->
+<resources>
+    <!-- res/values/arrays.xml -->
+    <string-array name="units_entries">
+        <item>@string/units_metric</item>
+        <item>@string/units_imperial</item>
+        <item>@string/units_mmhg</item> <!-- ⬅️ -->
+    </string-array>
+    <string-array name="units_values">
+        <item>metric</item>
+        <item>imperial</item>
+        <item>mmhg</item> <!-- ⬅️ -->
+    </string-array>
+
+
+    <string-array name="history_entries">
+        <item>100</item><item>200</item><item>500</item><item>1000</item>
+        <item>5000</item><item>10000</item><item>20000</item><item>50000</item>
+    </string-array>
+    <string-array name="history_values">
+        <item>100</item><item>200</item><item>500</item><item>1000</item>
+        <item>5000</item><item>10000</item><item>20000</item><item>50000</item>
+    </string-array>
+
+    <string-array name="interval_entries">
+        <item>1 с</item><item>5 с</item><item>10 с</item><item>30 с</item>
+        <item>1 мин</item><item>5 мин</item><item>1 ч</item>
+    </string-array>
+    <string-array name="interval_values">
+        <item>1000</item><item>5000</item><item>10000</item><item>30000</item>
+        <item>60000</item><item>300000</item><item>3600000</item>
+    </string-array>
+
+    <string-array name="entries_alert_window_hours">
+        <item>1</item><item>2</item><item>3</item><item>6</item><item>12</item><item>24</item>
+    </string-array>
+    <string-array name="values_alert_window_hours">
+        <item>1</item><item>2</item><item>3</item><item>6</item><item>12</item><item>24</item>
+    </string-array>
+
+
+    <string-array name="notification_mode_entries">
+        <item>@string/notification_mode_off</item>
+        <item>@string/notification_mode_simple</item>
+        <item>@string/notification_mode_smart</item>
+    </string-array>
+    <string-array name="notification_mode_values">
+        <item>off</item>
+        <item>simple</item>
+        <item>smart</item>
+    </string-array>
+
+    <string-array name="notification_simple_window_entries">
+        <item>@string/notification_window_1h</item>
+        <item>@string/notification_window_3h</item>
+        <item>@string/notification_window_6h</item>
+    </string-array>
+    <string-array name="notification_simple_window_values">
+        <item>1</item>
+        <item>3</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="notification_sensitivity_entries">
+        <item>@string/notification_sensitivity_low</item>
+        <item>@string/notification_sensitivity_medium</item>
+        <item>@string/notification_sensitivity_high</item>
+    </string-array>
+    <string-array name="notification_sensitivity_values">
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+    </string-array>
+
+    <string-array name="notification_min_interval_entries">
+        <item>@string/notification_interval_60</item>
+        <item>@string/notification_interval_120</item>
+        <item>@string/notification_interval_180</item>
+        <item>@string/notification_interval_240</item>
+        <item>@string/notification_interval_360</item>
+    </string-array>
+    <string-array name="notification_min_interval_values">
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>240</item>
+        <item>360</item>
+    </string-array>
+
+    <string-array name="silent_mode_kind_entries">
+        <item>@string/silent_mode_kind_off</item>
+        <item>@string/silent_mode_kind_manual</item>
+        <item>@string/silent_mode_kind_schedule</item>
+    </string-array>
+    <string-array name="silent_mode_kind_values">
+        <item>off</item>
+        <item>manual</item>
+        <item>schedule</item>
+    </string-array>
+
+    <string-array name="theme_mode_entries">
+        <item>@string/theme_mode_system</item>
+        <item>@string/theme_mode_light</item>
+        <item>@string/theme_mode_dark</item>
+        <item>@string/theme_mode_amoled</item>
+    </string-array>
+    <string-array name="theme_mode_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+        <item>amoled</item>
+    </string-array>
+
+</resources>

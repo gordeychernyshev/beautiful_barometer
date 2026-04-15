@@ -1,0 +1,539 @@
+<!-- app/src/main/res/values/strings.xml -->
+<resources>
+    <string name="app_name">Красивый барометр</string>
+    <string name="pressure">Давление</string>
+    <string name="altitude">Высота</string>
+    <string name="altitude_delta">Δ высоты</string>
+    <string name="btn_graph">График</string>
+    <string name="btn_settings">Настройки</string>
+    <string name="notification_channel_name">Барометр</string>
+    <string name="notification_channel_desc">Текущее давление</string>
+    <string name="notification_title">Текущее давление</string>
+
+    <string name="no_barometer_sensor">На устройстве нет барометра</string>
+    <string name="no_barometer_dialog_title">Нет датчика давления</string>
+    <string name="no_barometer_dialog_message">На этом устройстве нет датчика давления, поэтому измерения и история работать не будут.</string>
+    <string name="got_it">Понятно</string>
+    <string name="units_metric">Метрическая (hPa, м)</string>
+    <string name="units_imperial">Имперская (inHg, ft)</string>
+    <string name="units_mmhg">Миллиметры рт. ст. (mmHg, м)</string>
+
+    <string name="base_altitude_fmt">Базовая высота: %1$s</string>
+    <string name="base_altitude_sample">Базовая высота: 180 м</string>
+
+    <string name="trend_3h">за 3 ч</string>
+    <string name="trend_24h">за 24 ч</string>
+
+    <!-- для подписи под высотами -->
+    <string name="base_altitude_default">Базовая высота: +0 м</string>
+    <string name="altitude_above_sea_fmt">%1$s над у. м.</string>
+    <string name="altitude_below_sea_fmt">%1$s под у. м.</string>
+    <string name="altitude_delta_card_fmt">%1$s</string>
+
+
+
+    <string name="pref_title_units">Система измерений</string>
+    <string name="pref_title_history">Размер истории</string>
+    <string name="pref_theme_title">Тема</string>
+    <string name="pref_category_appearance">Внешний вид</string>
+    <string name="pref_category_recording">Запись и хранение</string>
+    <string name="pref_category_calibration">Калибровка</string>
+    <string name="pref_category_trip">Режим поездки</string>
+    <string name="pref_category_data">Данные</string>
+    <string name="pref_category_system">Технические настройки</string>
+    <string name="pref_clear_db_title">Очистить базу данных</string>
+    <string name="pref_clear_db_summary">Удалит все измерения и события (нельзя отменить)</string>
+
+    <string name="theme_mode_system">Системная</string>
+    <string name="theme_mode_light">Светлая</string>
+    <string name="theme_mode_dark">Тёмная</string>
+    <string name="theme_mode_amoled">Чёрная (AMOLED)</string>
+    <string name="pref_title_interval">Частота опроса датчика</string>
+    <string name="pref_history_summary_placeholder">Выберите, сколько записей хранить в истории</string>
+    <string name="pref_interval_summary_placeholder">Выберите, как часто опрашивать датчик</string>
+    <string name="pref_dialog_presets">Предустановки</string>
+    <string name="pref_dialog_custom_value">Свой вариант</string>
+    <string name="pref_dialog_save">Сохранить</string>
+    <string name="pref_dialog_cancel">Отмена</string>
+    <string name="pref_history_custom_hint">Количество записей</string>
+    <string name="pref_interval_custom_hint">Число</string>
+    <string name="pref_interval_unit_seconds">сек</string>
+    <string name="pref_interval_unit_minutes">мин</string>
+    <string name="pref_interval_unit_hours">ч</string>
+    <string name="pref_interval_unit_days">дней</string>
+    <string name="pref_history_summary_fmt">%1$s записей</string>
+    <string name="pref_interval_seconds_fmt">%1$s с</string>
+    <string name="pref_interval_minutes_fmt">%1$s мин</string>
+    <string name="pref_interval_hours_fmt">%1$s ч</string>
+    <string name="pref_interval_days_fmt">%1$s дней</string>
+    <string name="pref_invalid_number">Введите корректное число</string>
+    <string name="pref_autostart_title">Запускать после перезагрузки</string>
+    <string name="pref_autostart_summary">Автоматически запускать сервис измерений при включении телефона</string>
+    <string name="pref_title_ref_altitude">Базовая высота</string>
+    <string name="pref_summary_ref_altitude">Используется для Δ высоты</string>
+    <string name="pref_set_current_alt">Установить текущую как базовую</string>
+
+    <string name="graph_stats">мин %1$s  •  ср %2$s  •  макс %3$s</string>
+    <string name="graph_stats_default">—</string>
+    <string name="graph_stats_v2">%1$s • мин %2$s • ср %3$s • макс %4$s • Δ %5$s</string>
+    <string name="graph_no_data">Нет данных</string>
+    <string name="graph_custom_title">Диапазон дат</string>
+
+    <!-- empty state -->
+    <string name="graph_empty_title">Нет данных за %1$s</string>
+    <string name="graph_empty_subtitle">Запустите запись в фоне или выберите меньший диапазон.</string>
+    <string name="graph_empty_btn_start">Запустить запись</string>
+    <string name="graph_empty_btn_settings">Настройки</string>
+    <string name="graph_empty_btn_1h">Перейти на 1 час</string>
+
+    <!-- marker -->
+    <string name="graph_delta_10m">Δ за 10 мин</string>
+    <string name="graph_delta_1h">Δ за 1 час</string>
+    <string name="graph_marker_event">Событие: %1$s</string>
+    <string name="graph_start_of_data">Начало данных</string>
+
+    <!-- event labels -->
+    <string name="event_alarm">Тревога</string>
+    <string name="event_gps_baseline">GPS-база</string>
+    <string name="event_calibration">Калибровка</string>
+    <string name="event_service_start">Старт</string>
+    <string name="event_alarm_short">Трев.</string>
+    <string name="event_gps_baseline_short">GPS</string>
+    <string name="event_calibration_short">Калиб.</string>
+    <string name="event_service_start_short">Старт</string>
+
+    <!-- range labels -->
+    <string name="range_label_1h">1 ч</string>
+    <string name="range_label_3h">3 ч</string>
+    <string name="range_label_6h">6 ч</string>
+    <string name="range_label_12h">12 ч</string>
+    <string name="range_label_24h">24 ч</string>
+    <string name="range_label_7d">7 д</string>
+    <string name="range_label_30d">30 д</string>
+    <string name="range_label_custom">Выбранный период</string>
+
+    <!-- range chips -->
+    <string name="range_1h">1ч</string>
+    <string name="range_3h">3ч</string>
+    <string name="range_6h">6ч</string>
+    <string name="range_12h">12ч</string>
+    <string name="range_24h">24ч</string>
+    <string name="range_7d">7д</string>
+    <string name="range_30d">30д</string>
+    <string name="range_custom">С…по…</string>
+
+    <!-- graph toggles -->
+    <string name="mode_pressure">Давление</string>
+    <string name="mode_altitude">Высота</string>
+    <string name="raw">Сырьё</string>
+    <string name="smooth">Сглаж.</string>
+    <string name="raw_full">Сырые данные</string>
+    <string name="smooth_full">Сглаживание</string>
+    <string name="permission_required">Для уведомлений требуется разрешение</string>
+
+    <string name="export_summary">Сохранить историю измерений в CSV-файл</string>
+    <string name="action_export_csv">Экспорт CSV</string>
+    <string name="export_started">Экспорт: создайте файл…</string>
+    <string name="export_done">CSV сохранён</string>
+    <string name="export_failed">Не удалось сохранить CSV</string>
+    <string name="export_empty">Нет данных для экспорта</string>
+
+    <string name="set_base_alt_title">Установить базовую высоту</string>
+    <string name="set_base_manual">Вручную (по барометру)</string>
+    <string name="set_base_gps">GPS (запрос только при нажатии)</string>
+
+    <string name="perm_denied_location">Нет доступа к геолокации</string>
+    <string name="base_altitude_set_ok">Базовая высота обновлена</string>
+    <string name="no_sensor_data">Нет данных датчика</string>
+    <string name="gps_no_fix">Не удалось получить высоту (нет фикса)</string>
+    <string name="gps_error">Ошибка геолокации</string>
+
+    <string name="pref_alert_group">Предупреждения</string>
+    <string name="pref_alert_enabled">Резкое падение давления</string>
+    <string name="pref_alert_enabled_summary">Оповещать при падении на Y за X часов</string>
+    <string name="pref_alert_drop">Порог падения (Y)</string>
+    <string name="pref_alert_window">Окно (X часов)</string>
+    <string name="pref_alert_drop_hint">Напр.: 3.0</string>
+
+    <string name="alert_channel_name">Предупреждения</string>
+    <string name="alert_channel_desc">Оповещения о резком падении давления</string>
+    <string name="alert_drop_title">Резкое падение давления</string>
+    <string name="alert_drop_text">Падение на %1$s за %2$s ч</string>
+
+    <string name="pref_battery_title">Игнорировать оптимизации батареи</string>
+    <string name="pref_battery_summary_on">Приложение уже игнорирует оптимизацию системы</string>
+    <string name="pref_battery_summary_off">Система может замораживать сервис. Нажмите, чтобы отключить</string>
+    <string name="pref_battery_not_supported">Недоступно на этой версии Android</string>
+    <string name="pref_battery_failed">Не удалось открыть настройки</string>
+
+
+
+    <!-- forecast -->
+    <string name="forecast_title_default">Прогноз</string>
+    <string name="forecast_confidence_unknown">Уверенность: —</string>
+    <string name="forecast_not_enough_data">Слишком рано прогнозировать</string>
+    <string name="forecast_not_enough_data_title">Слишком рано прогнозировать</string>
+    <string name="forecast_not_enough_data_desc">Собираем данные для прогноза</string>
+    <string name="forecast_not_enough_data_summary">Детали прогноза появятся после накопления данных.</string>
+    <string name="forecast_delta_1h_unknown">Δ1ч —</string>
+    <string name="forecast_delta_3h_unknown">Δ3ч —</string>
+    <string name="forecast_speed_unknown">Скорость —</string>
+    <string name="forecast_quality_unknown">Качество: —</string>
+    <string name="forecast_noise_unknown">Шум: —</string>
+    <string name="forecast_summary_unknown">Собираем данные для прогноза</string>
+    <string name="forecast_confidence_hint_unknown">Детали уверенности появятся после анализа тренда</string>
+    <string name="forecast_confidence_fmt">Уверенность: %1$s</string>
+    <string name="forecast_compare_unknown">Как вчера: —</string>
+
+    <string name="forecast_explain_title">Как мы считаем прогноз</string>
+    <string name="forecast_explain_body">Мы смотрим на тренд давления за окна 1, 3 и 6 часов, оцениваем шум, покрытие окна и согласованность сигнала. Это локальный прогноз по барометру: он хорошо показывает направление и нестабильность, но не обещает точные осадки.</string>
+
+
+    <string name="pref_trip_mode_title">Режим поездки</string>
+    <string name="pref_trip_mode_summary">Во время поездки прогноз выключен. После выключения режима прогноз начнёт считаться с текущего момента</string>
+    <string name="forecast_trip_mode_title">Режим поездки</string>
+    <string name="forecast_trip_mode_desc">Прогноз временно выключен. После завершения поездки он начнёт считаться только по новым данным.</string>
+    <string name="forecast_trip_mode_summary">Карточка прогноза поставлена на паузу, чтобы не смешивать разные локации и высоты.</string>
+    <string name="forecast_trip_mode_confidence">уверенность: выключен</string>
+
+    <string name="pref_trip_suggestion_title">Предлагать режим поездки</string>
+    <string name="pref_trip_suggestion_summary">Если данные похожи на движение или движение закончилось, приложение пришлёт push-предложение изменить режим поездки</string>
+    <string name="trip_suggestion_title">Похоже, вы в движении</string>
+    <string name="trip_suggestion_body">Включить режим поездки, чтобы прогноз не искажался резкими изменениями давления?</string>
+    <string name="trip_suggestion_action_enable">Включить</string>
+    <string name="trip_suggestion_action_dismiss">Не сейчас</string>
+    <string name="trip_end_suggestion_title">Похоже, движение закончилось</string>
+    <string name="trip_end_suggestion_body">Выключить режим поездки и снова включить прогноз?</string>
+    <string name="trip_end_suggestion_action_disable">Выключить</string>
+    
+    <string name="btn_status">Статус</string>
+    <string name="btn_pause_recording">Пауза</string>
+
+    <string name="recording_state_on">Запись включена</string>
+    <string name="recording_state_off">Запись выключена</string>
+    <string name="recording_hint_running">Сервис работает в фоне и пишет историю.</string>
+    <string name="recording_hint_starting">Пытаемся запустить сервис измерений.</string>
+    <string name="recording_hint_paused">Измерения остановлены до ручного включения.</string>
+
+    <string name="pref_recording_title">Запись давления</string>
+        <string name="pref_recording_state_on">Запись в фоне включена</string>
+    <string name="pref_recording_state_off">Запись в фоне выключена</string>
+    <string name="pref_adaptive_recording_title">Адаптивная запись</string>
+    <string name="pref_adaptive_recording_summary">В спокойные периоды сохраняет точки реже, а при заметных изменениях чаще</string>
+    <string name="status_adaptive_enabled">Адаптивная запись: включена</string>
+    <string name="status_adaptive_disabled">Адаптивная запись: выключена, используется фиксированная запись</string>
+    <string name="status_adaptive_mode_fmt">Текущий режим записи: %1$s</string>
+    <string name="adaptive_mode_calm">спокойный</string>
+    <string name="adaptive_mode_normal">обычный</string>
+    <string name="adaptive_mode_rapid">быстрый</string>
+    <string name="adaptive_mode_fixed">фиксированный</string>
+    <string name="adaptive_mode_stopped">остановлен</string>
+    <string name="pref_set_current_alt_summary">Открыть пошаговый мастер калибровки</string>
+    <string name="pref_open_status_title">Экран состояния датчика</string>
+    <string name="pref_open_status_summary">Показать состояние сервиса, датчика и базы</string>
+    <string name="pref_background_help_title">Защита от выгрузки системой</string>
+    <string name="pref_background_help_summary">Подсказки для Xiaomi/MIUI и других прошивок</string>
+    <string name="pref_background_help_battery">Батарея</string>
+    <string name="pref_background_help_autostart">Автозапуск</string>
+
+    <string name="status_title">Состояние барометра</string>
+    <string name="status_card_runtime">Сейчас</string>
+    <string name="status_card_config">Конфигурация</string>
+    <string name="status_sensor_present">Датчик: барометр найден</string>
+    <string name="status_sensor_missing">Датчик: барометр не найден</string>
+    <string name="status_recording_enabled">Запись: включена</string>
+    <string name="status_recording_disabled">Запись: выключена</string>
+    <string name="status_service_running">Сервис: работает</string>
+    <string name="status_service_stopped">Сервис: остановлен</string>
+    <string name="status_notifications_ok">Уведомления: разрешены</string>
+    <string name="status_notifications_missing">Уведомления: не разрешены</string>
+    <string name="status_battery_ok">Батарея: приложение в исключениях или ограничений нет</string>
+    <string name="status_battery_restricted">Батарея: систему стоит настроить, иначе сервис могут выгружать</string>
+    <string name="status_autostart_on">Автозапуск после перезагрузки: включён</string>
+    <string name="status_autostart_off">Автозапуск после перезагрузки: выключен</string>
+    <string name="status_last_sample_none">Последнее измерение: данных ещё нет</string>
+    <string name="status_last_sample_fmt">Последнее измерение: %1$s</string>
+    <string name="status_db_count_fmt">Точек в базе: %1$d</string>
+    <string name="status_interval_seconds_fmt">Интервал опроса: %.1f с</string>
+    <string name="status_interval_ms_fmt">Интервал опроса: %1$d мс</string>
+    <string name="status_history_fmt">Лимит истории: %1$d записей</string>
+    <string name="status_refresh">Обновить</string>
+    <string name="status_open_battery_help">Открыть подсказки по фону</string>
+    <string name="status_open_calibration">Открыть мастер калибровки</string>
+
+    <string name="calibration_title">Мастер калибровки</string>
+    <string name="calibration_baseline_fmt">Текущая базовая высота: %1$s</string>
+    <string name="calibration_last_measured_none">Последнее измерение ещё не записано.</string>
+    <string name="calibration_last_measured_fmt">Последнее измерение: %1$s, оценка высоты %2$s</string>
+    <string name="calibration_tip">Рекомендуемый порядок: сначала попробуйте GPS на улице, затем при необходимости уточните вручную. Барометрический вариант удобен для быстрой локальной калибровки.</string>
+    <string name="calibration_action_barometer">Взять текущую высоту по барометру</string>
+    <string name="calibration_action_gps">Получить высоту по GPS</string>
+    <string name="calibration_action_manual">Ввести высоту вручную</string>
+    <string name="calibration_action_reset">Сбросить базу в 0 м</string>
+    <string name="calibration_manual_title">Введите базовую высоту</string>
+    <string name="calibration_manual_hint">Например: 173.5</string>
+    <string name="calibration_manual_invalid">Не удалось распознать число</string>
+    <string name="calibration_reset_done">Базовая высота сброшена</string>
+
+
+    <string name="widget_description">Домашний виджет с текущим давлением, трендом, прогнозом и быстрыми действиями</string>
+    <string name="widget_chart_cd">Мини-график давления</string>
+    <string name="widget_badge_recording">Запись</string>
+    <string name="widget_badge_paused">Пауза</string>
+    <string name="widget_badge_trip">Поездка</string>
+    <string name="widget_btn_open">Открыть</string>
+    <string name="widget_btn_graph">График</string>
+    <string name="widget_btn_pause">Пауза</string>
+    <string name="widget_btn_start">Старт</string>
+    <string name="widget_btn_refresh">↻</string>
+    <string name="widget_no_data_title">Пока нет данных</string>
+    <string name="widget_no_data_subtitle">Включите запись, и виджет начнёт показывать тренд и прогноз.</string>
+    <string name="widget_delta_1h_unknown">Δ1ч: —</string>
+    <string name="widget_delta_3h_unknown">Δ3ч: —</string>
+    <string name="widget_delta_1h_fmt">Δ1ч: %1$s</string>
+    <string name="widget_delta_3h_fmt">Δ3ч: %1$s</string>
+    <string name="widget_footer_recording">Запись • %1$s</string>
+    <string name="widget_footer_paused">Запись выключена</string>
+    <string name="widget_footer_starting">Запись запускается</string>
+    <string name="widget_footer_trip">Режим поездки • прогноз на паузе</string>
+    <string name="widget_footer_updated_fmt">%1$s · %2$s</string>
+
+
+    <string name="pref_notifications_group">Уведомления</string>
+    <string name="pref_notifications_mode">Режим уведомлений</string>
+    <string name="pref_notifications_mode_summary">Режим уведомлений</string>
+    <string name="pref_notifications_mode_description_off">Уведомления выключены</string>
+    <string name="pref_notifications_mode_description_simple">Обычные уведомления сравнивают давление за выбранное окно и сообщают о заметном росте или падении по заданному порогу.</string>
+    <string name="pref_notifications_mode_description_smart">Умные уведомления сообщают не о каждом скачке, а только о важных изменениях тренда: ухудшении, стабилизации и улучшении.</string>
+    <string name="pref_notification_simple_drop">Уведомлять о падении</string>
+    <string name="pref_notification_simple_rise">Уведомлять о росте</string>
+    <string name="pref_notification_simple_threshold">Порог изменения</string>
+    <string name="pref_notification_simple_threshold_summary">Минимальное изменение давления, после которого придёт уведомление</string>
+    <string name="pref_notification_simple_window">Окно анализа</string>
+    <string name="pref_notification_simple_window_summary">За какой период сравнивать изменение давления</string>
+    <string name="pref_notification_sensitivity">Чувствительность</string>
+    <string name="pref_notification_sensitivity_description_low">Низкая чувствительность сообщает только о самых выраженных изменениях и беспокоит реже.</string>
+    <string name="pref_notification_sensitivity_description_medium">Средняя чувствительность — сбалансированный режим для повседневного использования.</string>
+    <string name="pref_notification_sensitivity_description_high">Высокая чувствительность реагирует раньше и чаще, когда тренд только начинает меняться.</string>
+    <string name="pref_notification_min_interval">Минимальный интервал между уведомлениями</string>
+    <string name="pref_silent_mode_title">Тихий режим</string>
+    <string name="pref_silent_mode_enabled">Тихий режим сейчас</string>
+    <string name="pref_silent_mode_enabled_summary">Пока включён, уведомления не приходят</string>
+    <string name="pref_silent_mode_schedule">Расписание тихого режима</string>
+    <string name="pref_time_picker_title_start">Выберите время начала</string>
+    <string name="pref_time_picker_title_end">Выберите время окончания</string>
+    <string name="pref_silent_mode_schedule_summary_fmt">Начало: %1$s • Конец: %2$s</string>
+    <string name="pref_silent_mode_schedule_pick_start">Начало</string>
+    <string name="pref_silent_mode_schedule_pick_end">Конец</string>
+    <string name="notifications_channel_name">Уведомления барометра</string>
+    <string name="notifications_channel_desc">Уведомления о важных изменениях давления</string>
+    <string name="notification_sensitivity_low">Низкая</string>
+    <string name="notification_sensitivity_medium">Средняя</string>
+    <string name="notification_sensitivity_high">Высокая</string>
+    <string name="notification_interval_60">1 час</string>
+    <string name="notification_interval_120">2 часа</string>
+    <string name="notification_interval_180">3 часа</string>
+    <string name="notification_interval_240">4 часа</string>
+    <string name="notification_interval_360">6 часов</string>
+    <string name="notification_mode_off">Выключены</string>
+    <string name="notification_mode_simple">Обычные</string>
+    <string name="notification_mode_smart">Умные</string>
+    <string name="notification_window_1h">1 час</string>
+    <string name="notification_window_3h">3 часа</string>
+    <string name="notification_window_6h">6 часов</string>
+    <string name="silent_mode_kind_off">Выключен</string>
+    <string name="silent_mode_kind_manual">Вкл/выкл вручную</string>
+    <string name="silent_mode_kind_schedule">По расписанию</string>
+    <string name="status_notifications_feature_off">Уведомления: выключены</string>
+    <string name="status_notifications_feature_simple_fmt">Уведомления: обычные</string>
+    <string name="status_notifications_feature_simple_details_fmt">Порог: %1$s
+Окно: %2$s</string>
+    <string name="status_notifications_feature_smart_fmt">Уведомления: умные</string>
+    <string name="status_notifications_feature_smart_details_fmt">Чувствительность: %1$s</string>
+    <string name="status_notifications_permission_fmt">Разрешение на уведомления: %1$s</string>
+    <string name="status_notifications_permission_yes">разрешено</string>
+    <string name="status_notifications_permission_no">не разрешено</string>
+    <string name="status_silent_mode_fmt">Тихий режим: %1$s</string>
+    <string name="status_last_notification_none">Последнее уведомление: ещё не отправлялось</string>
+    <string name="status_last_notification_fmt">Последнее уведомление: %1$s, %2$s</string>
+    <string name="event_notification_simple_drop">Уведомление: падение давления</string>
+    <string name="event_notification_simple_rise">Уведомление: рост давления</string>
+    <string name="event_notification_simple_drop_short">Ув.↓порог</string>
+    <string name="event_notification_simple_rise_short">Ув.↑порог</string>
+    <string name="notification_simple_drop_title">Давление заметно падает</string>
+    <string name="notification_simple_rise_title">Давление заметно растёт</string>
+    <string name="notification_simple_body_fmt">Изменение %1$s за %2$s</string>
+    <string name="event_notification_fast_worsening">Уведомление: быстрое ухудшение</string>
+    <string name="event_notification_sustained_worsening">Уведомление: устойчивое ухудшение</string>
+    <string name="event_notification_stabilizing">Уведомление: стабилизация</string>
+    <string name="event_notification_improving">Уведомление: улучшение</string>
+    <string name="event_notification_fast_worsening_short">Ув.↓!</string>
+    <string name="event_notification_sustained_worsening_short">Ув.↓</string>
+    <string name="event_notification_stabilizing_short">Ув.=</string>
+    <string name="event_notification_improving_short">Ув.↑</string>
+    <string name="event_trip_mode_on">Режим поездки включён</string>
+    <string name="event_trip_mode_off">Режим поездки выключен</string>
+    <string name="event_trip_mode_on_short">Поездка вкл.</string>
+    <string name="event_trip_mode_off_short">Поездка выкл.</string>
+
+
+    <string name="graph_screen_title">График</string>
+    <string name="graph_range_loading">Загружаем диапазон…</string>
+    <string name="graph_open_stats">Открыть статистику</string>
+    <string name="graph_open_timeline">Открыть таймлайн событий</string>
+    <string name="graph_section_display">Что показывать</string>
+    <string name="graph_section_line">Как показывать</string>
+    <string name="graph_stat_min">Минимум</string>
+    <string name="graph_stat_avg">Среднее</string>
+    <string name="graph_stat_max">Максимум</string>
+    <string name="graph_stat_delta">Изменение</string>
+    <string name="graph_stat_noise">Шум</string>
+    <string name="graph_stat_events">События</string>
+
+    <string name="graph_header_stats">Статистика</string>
+    <string name="graph_header_events_empty">Событий нет</string>
+    <string name="graph_header_events_count">%1$d событий</string>
+    <string name="graph_header_events_count_one">%1$d событие</string>
+    <string name="graph_header_events_count_few">%1$d события</string>
+    <string name="graph_header_events_count_many">%1$d событий</string>
+    <string name="graph_badge_notification">Уведомление</string>
+    <string name="graph_badge_signal">Сигнал</string>
+    <string name="graph_badge_calibration">Калибровка</string>
+    <string name="graph_badge_gps">GPS</string>
+    <string name="graph_stats_sheet_title">Статистика периода</string>
+    <string name="graph_timeline_title">Таймлайн событий</string>
+    <string name="graph_timeline_subtitle">Нажмите на событие, чтобы перейти к точке на графике.</string>
+    <string name="graph_timeline_empty">За выбранный период значимых событий нет.</string>
+    <string name="graph_timeline_hint">Нажмите, чтобы перейти к точке на графике</string>
+    <string name="graph_timeline_hint_value">%1$s • %2$s</string>
+    <string name="graph_stats_summary_fmt">Период: %1$s
+Точек: %2$d
+Событий: %3$d
+Шум: %4$s</string>
+
+
+
+    <string name="pref_hide_status_bar_title">Скрыть строку состояния</string>
+    <string name="pref_hide_status_bar_summary">Убирает системную строку состояния в приложении</string>
+
+    <string name="pref_report_problem_title">Сообщить о проблеме</string>
+    <string name="pref_report_problem_summary">Откроет почтовое приложение и приложит файл техотчёта</string>
+    <string name="report_problem_preparing">Готовим отчёт…</string>
+    <string name="report_problem_failed">Не удалось подготовить отчёт</string>
+    <string name="report_problem_no_email_app">Не найдено почтовое приложение</string>
+    <string name="report_problem_chooser_title">Отправить отчёт</string>
+    <string name="report_problem_email_subject">Barometer problem report</string>
+    <string name="report_problem_email_body">Опишите, что произошло, что вы делали перед ошибкой и как это повторить.</string>
+    <string name="crash_report_dialog_title">Обнаружен отчёт о падении</string>
+    <string name="crash_report_dialog_message">Приложение в прошлый раз завершилось с ошибкой. Отправить отчёт разработчику?</string>
+    <string name="crash_report_dialog_send">Отправить</string>
+    <string name="crash_report_dialog_later">Позже</string>
+    <string name="crash_report_dialog_delete">Удалить</string>
+    <string name="crash_report_email_subject">Barometer crash report</string>
+    <string name="crash_report_email_body">Приложение в прошлый раз завершилось с ошибкой. Ниже приложен файл отчёта с крэш-логом и последними событиями приложения.</string>
+
+
+    <string name="onboarding_skip">Пропустить</string>
+    <string name="onboarding_back">Назад</string>
+    <string name="onboarding_next">Далее</string>
+    <string name="onboarding_start">Начать</string>
+    <string name="onboarding_step_fmt">%1$d из %2$d</string>
+
+    <string name="onboarding_title_1">Давление без хаоса</string>
+    <string name="onboarding_body_1">Приложение пишет давление в фоне, показывает текущую картину и объясняет, что происходит сейчас.</string>
+    <string name="onboarding_footer_1">Текущее давление • тенденции • прогноз</string>
+
+    <string name="onboarding_title_2">История и события</string>
+    <string name="onboarding_body_2">Смотрите изменения за нужный период, открывайте статистику и переходите к важным событиям.</string>
+    <string name="onboarding_footer_2">Интервалы • таймлайн • статистика</string>
+
+    <string name="onboarding_title_3">Обычные и умные уведомления</string>
+    <string name="onboarding_body_3">Можно получать простые уведомления о перепадах или более умные сигналы по тренду.</string>
+    <string name="onboarding_footer_3">Обычные • умные • тихий режим</string>
+
+    <string name="onboarding_title_4">Режим поездки</string>
+    <string name="onboarding_body_4">Во время движения прогноз может искажаться. Приложение умеет предлагать включить и выключить этот режим.</string>
+    <string name="onboarding_footer_4">Чтобы движение не ломало прогноз</string>
+
+    <string name="onboarding_title_5">Адаптивная запись</string>
+    <string name="onboarding_body_5">В спокойные периоды приложение пишет реже, а при изменениях чаще, чтобы не терять важные участки.</string>
+    <string name="onboarding_footer_5">Реже в покое • чаще при изменениях</string>
+
+    <string name="onboarding_title_6">Экспорт данных</string>
+    <string name="onboarding_body_6">Данные можно выгрузить и сохранить для анализа, переноса или отправки при разборе проблемы.</string>
+    <string name="onboarding_footer_6">История • экспорт • перенос</string>
+
+    <string name="onboarding_title_7">Подстройте под себя</string>
+    <string name="onboarding_body_7">Приложение поддерживает системную тему и умеет быстро подготовить отчёт о проблеме с вложением.</string>
+    <string name="onboarding_footer_7">Темы • отчёт о проблеме • фон</string>
+    <string name="onboarding_preview_badge_1">Главный экран</string>
+    <string name="onboarding_preview_title_1">1012.3 hPa</string>
+    <string name="onboarding_preview_subtitle_1">Прогноз активен • данные свежие</string>
+    <string name="onboarding_preview_chip_1_1">Тенденции</string>
+    <string name="onboarding_preview_chip_1_2">Прогноз</string>
+    <string name="onboarding_preview_chip_1_3">Высота</string>
+    <string name="onboarding_preview_stat1_label_1">Сейчас</string>
+    <string name="onboarding_preview_stat1_value_1">1012.3</string>
+    <string name="onboarding_preview_stat2_label_1">Прогноз</string>
+    <string name="onboarding_preview_stat2_value_1">Стабильно</string>
+    <string name="onboarding_preview_badge_2">График</string>
+    <string name="onboarding_preview_title_2">24 часа</string>
+    <string name="onboarding_preview_subtitle_2">5 событий и сравнение с прошлым периодом</string>
+    <string name="onboarding_preview_chip_2_1">1ч–30д</string>
+    <string name="onboarding_preview_chip_2_2">Таймлайн</string>
+    <string name="onboarding_preview_chip_2_3">Статистика</string>
+    <string name="onboarding_preview_stat1_label_2">События</string>
+    <string name="onboarding_preview_stat1_value_2">5</string>
+    <string name="onboarding_preview_stat2_label_2">Амплитуда</string>
+    <string name="onboarding_preview_stat2_value_2">3.2 hPa</string>
+    <string name="onboarding_preview_badge_3">Уведомления</string>
+    <string name="onboarding_preview_title_3">Умные уведомления</string>
+    <string name="onboarding_preview_subtitle_3">Только важные изменения, без лишнего шума</string>
+    <string name="onboarding_preview_chip_3_1">Обычные</string>
+    <string name="onboarding_preview_chip_3_2">Умные</string>
+    <string name="onboarding_preview_chip_3_3">Тихий режим</string>
+    <string name="onboarding_preview_stat1_label_3">Режим</string>
+    <string name="onboarding_preview_stat1_value_3">Умные</string>
+    <string name="onboarding_preview_stat2_label_3">Чувств.</string>
+    <string name="onboarding_preview_stat2_value_3">Средняя</string>
+    <string name="onboarding_preview_badge_4">Поездка</string>
+    <string name="onboarding_preview_title_4">Прогноз временно отключён</string>
+    <string name="onboarding_preview_subtitle_4">Данные сохраняются, но интерпретация не искажается</string>
+    <string name="onboarding_preview_chip_4_1">Включить</string>
+    <string name="onboarding_preview_chip_4_2">Выключить</string>
+    <string name="onboarding_preview_chip_4_3">Подсказки</string>
+    <string name="onboarding_preview_stat1_label_4">Режим</string>
+    <string name="onboarding_preview_stat1_value_4">Включён</string>
+    <string name="onboarding_preview_stat2_label_4">Прогноз</string>
+    <string name="onboarding_preview_stat2_value_4">Пауза</string>
+    <string name="onboarding_preview_badge_5">Запись</string>
+    <string name="onboarding_preview_title_5">Адаптивная запись</string>
+    <string name="onboarding_preview_subtitle_5">Спокойно — реже. Изменения — чаще.</string>
+    <string name="onboarding_preview_chip_5_1">Батарея</string>
+    <string name="onboarding_preview_chip_5_2">История</string>
+    <string name="onboarding_preview_chip_5_3">Точность</string>
+    <string name="onboarding_preview_stat1_label_5">Спокойно</string>
+    <string name="onboarding_preview_stat1_value_5">3 мин</string>
+    <string name="onboarding_preview_stat2_label_5">Активно</string>
+    <string name="onboarding_preview_stat2_value_5">20 с</string>
+    <string name="onboarding_preview_badge_6">Данные</string>
+    <string name="onboarding_preview_title_6">Экспорт CSV</string>
+    <string name="onboarding_preview_subtitle_6">Сохрани историю за нужный период</string>
+    <string name="onboarding_preview_chip_6_1">CSV</string>
+    <string name="onboarding_preview_chip_6_2">История</string>
+    <string name="onboarding_preview_chip_6_3">Перенос</string>
+    <string name="onboarding_preview_stat1_label_6">Период</string>
+    <string name="onboarding_preview_stat1_value_6">30 дней</string>
+    <string name="onboarding_preview_stat2_label_6">Формат</string>
+    <string name="onboarding_preview_stat2_value_6">CSV</string>
+    <string name="onboarding_preview_badge_7">Поддержка</string>
+    <string name="onboarding_preview_title_7">Отчёт о проблеме</string>
+    <string name="onboarding_preview_subtitle_7">Письмо с техотчётом открывается в пару тапов</string>
+    <string name="onboarding_preview_chip_7_1">Системная</string>
+    <string name="onboarding_preview_chip_7_2">AMOLED</string>
+    <string name="onboarding_preview_chip_7_3">Письмо</string>
+    <string name="onboarding_preview_stat1_label_7">Тема</string>
+    <string name="onboarding_preview_stat1_value_7">AMOLED</string>
+    <string name="onboarding_preview_stat2_label_7">Отчёт</string>
+    <string name="onboarding_preview_stat2_value_7">Готов</string>
+</resources>
