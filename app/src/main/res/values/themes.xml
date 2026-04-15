@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Barometer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+    </style>
+
+    <style name="Theme.Barometer.Amoled" parent="Theme.Barometer">
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorSurfaceDim">@android:color/black</item>
+        <item name="colorSurfaceBright">@android:color/black</item>
+        <item name="colorSurfaceContainerLowest">@android:color/black</item>
+        <item name="colorSurfaceContainerLow">@android:color/black</item>
+        <item name="colorSurfaceContainer">@android:color/black</item>
+        <item name="colorSurfaceContainerHigh">#FF080808</item>
+        <item name="colorSurfaceContainerHighest">#FF101010</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="colorOutline">#33FFFFFF</item>
+        <item name="colorOutlineVariant">#1FFFFFFF</item>
+    </style>
+</resources>

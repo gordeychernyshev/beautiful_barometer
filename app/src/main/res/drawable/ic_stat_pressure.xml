@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:autoMirrored="true">
+
+    <!-- Кольцо шкалы -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,2a10,10 0 1,1 0,20a10,10 0 1,1 0,-20"/>
+
+    <!-- Игла -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M12,12 L18,8"/>
+
+    <!-- Центральная точка -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,11a1,1 0 1,0 0,2a1,1 0 1,0 0,-2"/>
+</vector>

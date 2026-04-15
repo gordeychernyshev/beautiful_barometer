@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="widget_surface">#FF0F172A</color>
+    <color name="widget_stroke">#33475A7A</color>
+    <color name="widget_chip_bg">#FF1E293B</color>
+    <color name="widget_button_bg">#FF172033</color>
+    <color name="widget_text_primary">#FFF8FAFC</color>
+    <color name="widget_text_secondary">#FFCBD5E1</color>
+    <color name="widget_badge_text">#FFFFFFFF</color>
+    <color name="widget_positive">#FF22C55E</color>
+    <color name="widget_negative">#FFF87171</color>
+    <color name="widget_warning">#FFFBBF24</color>
+    <color name="widget_line_grid">#335B708F</color>
+    <color name="widget_fill_tint">#225B9CFF</color>
+</resources>
