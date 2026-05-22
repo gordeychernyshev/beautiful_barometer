@@ -1,0 +1,19 @@
+services:
+  barometer-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ANDROID_PLATFORM: 34
+        ANDROID_BUILD_TOOLS: 34.0.0
+    container_name: barometer-builder
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - gradle-cache:/root/.gradle
+    environment:
+      GRADLE_USER_HOME: /root/.gradle
+    command: ./gradlew assembleDebug
+
+volumes:
+  gradle-cache:
