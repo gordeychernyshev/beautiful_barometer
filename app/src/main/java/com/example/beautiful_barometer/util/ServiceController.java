@@ -10,6 +10,7 @@ import androidx.preference.PreferenceManager;
 
 import com.example.beautiful_barometer.notifications.PressureNotificationStateStore;
 import com.example.beautiful_barometer.feedback.AppEventLogger;
+import com.example.beautiful_barometer.service.RecordingTileService;
 import com.example.beautiful_barometer.service.SensorService;
 import com.example.beautiful_barometer.util.DeviceCapabilities;
 
@@ -97,12 +98,14 @@ public final class ServiceController {
             setServiceRunning(appContext, false);
             setAdaptiveMode(appContext, "stopped");
             AppEventLogger.log(appContext, "RECORDING", "start ignored: no barometer sensor");
+            RecordingTileService.requestTileRefresh(appContext);
             return;
         }
         setRecordingEnabled(appContext, true);
         setAdaptiveMode(appContext, isAdaptiveRecordingEnabled(appContext) ? "normal" : "fixed");
         AppEventLogger.log(appContext, "RECORDING", "start requested; adaptive=" + isAdaptiveRecordingEnabled(appContext));
         ContextCompat.startForegroundService(appContext, new Intent(appContext, SensorService.class));
+        RecordingTileService.requestTileRefresh(appContext);
     }
 
     public static void stopRecording(Context context) {
@@ -112,5 +115,6 @@ public final class ServiceController {
         AppEventLogger.log(appContext, "RECORDING", "stop requested");
         PressureNotificationStateStore.clearTransientState(appContext);
         appContext.stopService(new Intent(appContext, SensorService.class));
+        RecordingTileService.requestTileRefresh(appContext);
     }
 }

@@ -211,6 +211,13 @@
 
     <string name="recording_state_on">Запись включена</string>
     <string name="recording_state_off">Запись выключена</string>
+    <string name="qs_recording_tile_label">Состояние записи</string>
+    <string name="qs_recording_tile_on">Вкл.</string>
+    <string name="qs_recording_tile_off">Откл.</string>
+    <string name="qs_recording_tile_unavailable">Нет датчика</string>
+    <string name="qs_recording_tile_on_desc">Запись давления включена</string>
+    <string name="qs_recording_tile_off_desc">Запись давления выключена</string>
+    <string name="qs_recording_tile_unavailable_desc">На устройстве нет барометра</string>
     <string name="recording_hint_running">Сервис работает в фоне и пишет историю.</string>
     <string name="recording_hint_starting">Пытаемся запустить сервис измерений.</string>
     <string name="recording_hint_paused">Измерения остановлены до ручного включения.</string>
