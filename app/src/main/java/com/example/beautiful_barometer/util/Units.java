@@ -40,12 +40,12 @@ public class Units {
         if (Double.isNaN(hPa)) return "--";
         switch (sys) {
             case IMPERIAL:
-                return String.format("%.2f", hPa * HPA_TO_INHG);
+                return String.format(Locale.getDefault(), "%.2f", hPa * HPA_TO_INHG);
             case MMHG:
-                return String.format("%.0f", hPa * HPA_TO_MMHG);
+                return String.format(Locale.getDefault(), "%.0f", hPa * HPA_TO_MMHG);
             case METRIC:
             default:
-                return String.format("%.0f", hPa);
+                return String.format(Locale.getDefault(), "%.0f", hPa);
         }
     }
 
@@ -65,9 +65,9 @@ public class Units {
 
     public static String formatAltitude(double meters, System sys) {
         if (sys == System.IMPERIAL) {
-            return String.format("%+.0f ft", meters * M_TO_FT);
+            return String.format(Locale.getDefault(), "%+.0f ft", meters * M_TO_FT);
         } else {
-            return String.format("%+.0f м", meters);
+            return String.format(Locale.getDefault(), "%+.0f м", meters);
         }
     }
 

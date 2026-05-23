@@ -1,6 +1,7 @@
 // app/src/main/java/com/example/beautiful_barometer/service/SensorService.java
 package com.example.beautiful_barometer.service;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -124,6 +125,7 @@ public class SensorService extends Service implements SensorEventListener {
     }
 
 
+    @SuppressLint("InlinedApi")
     private void startAsForeground(Notification notification) {
         ServiceCompat.startForeground(
                 this,
@@ -508,39 +510,33 @@ public class SensorService extends Service implements SensorEventListener {
     }
 
     private void createChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel ch = new NotificationChannel(
-                    CHANNEL_ID,
-                    getString(R.string.notification_channel_name),
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            ch.setDescription(getString(R.string.notification_channel_desc));
-            NotificationManager nm = getSystemService(NotificationManager.class);
-            if (nm != null) {
-                nm.createNotificationChannel(ch);
-            }
+        NotificationChannel ch = new NotificationChannel(
+                CHANNEL_ID,
+                getString(R.string.notification_channel_name),
+                NotificationManager.IMPORTANCE_LOW
+        );
+        ch.setDescription(getString(R.string.notification_channel_desc));
+        NotificationManager nm = getSystemService(NotificationManager.class);
+        if (nm != null) {
+            nm.createNotificationChannel(ch);
         }
     }
 
     private void createAlertsChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel ch = new NotificationChannel(
-                    ALERTS_CHANNEL_ID,
-                    getString(R.string.notifications_channel_name),
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
-            ch.setDescription(getString(R.string.notifications_channel_desc));
-            NotificationManager nm = getSystemService(NotificationManager.class);
-            if (nm != null) {
-                nm.createNotificationChannel(ch);
-            }
+        NotificationChannel ch = new NotificationChannel(
+                ALERTS_CHANNEL_ID,
+                getString(R.string.notifications_channel_name),
+                NotificationManager.IMPORTANCE_DEFAULT
+        );
+        ch.setDescription(getString(R.string.notifications_channel_desc));
+        NotificationManager nm = getSystemService(NotificationManager.class);
+        if (nm != null) {
+            nm.createNotificationChannel(ch);
         }
     }
 
     private int piFlagsUpdateImmutable() {
-        return Build.VERSION.SDK_INT >= 23
-                ? PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
-                : PendingIntent.FLAG_UPDATE_CURRENT;
+        return PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
     }
 
     private PendingIntent mainContentPendingIntent() {

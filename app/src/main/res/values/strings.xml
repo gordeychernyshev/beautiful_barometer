@@ -356,6 +356,7 @@
     <string name="status_silent_mode_fmt">Тихий режим: %1$s</string>
     <string name="status_last_notification_none">Последнее уведомление: ещё не отправлялось</string>
     <string name="status_last_notification_fmt">Последнее уведомление: %1$s, %2$s</string>
+    <string name="status_notifications_block_fmt">%1$s\n%2$s\n%3$s\n%4$s</string>
     <string name="event_notification_simple_drop">Уведомление: падение давления</string>
     <string name="event_notification_simple_rise">Уведомление: рост давления</string>
     <string name="event_notification_simple_drop_short">Ув.↓порог</string>

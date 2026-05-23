@@ -1,5 +1,6 @@
 package com.example.beautiful_barometer.ui;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -1332,6 +1333,7 @@ public class GraphActivity extends AppCompatActivity {
         return tv;
     }
 
+    @SuppressLint("InflateParams")
     private void showStatsSheet() {
         AppEventLogger.log(this, "GRAPH", "build stats sheet content");
         BottomSheetDialog dialog = new BottomSheetDialog(this);
@@ -1390,6 +1392,7 @@ public class GraphActivity extends AppCompatActivity {
         configureBottomSheet(dialog);
     }
 
+    @SuppressLint("InflateParams")
     private void showTimelineSheet() {
         AppEventLogger.log(this, "GRAPH", "build timeline sheet content");
         BottomSheetDialog dialog = new BottomSheetDialog(this);

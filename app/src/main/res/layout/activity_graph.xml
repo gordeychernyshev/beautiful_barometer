@@ -217,7 +217,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_trend_arrow"
-                android:tint="?attr/colorOnSurface" />
+                app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:id="@+id/emptyTitle"

@@ -1,6 +1,7 @@
 // app/src/main/java/com/example/beautiful_barometer/ui/MainActivity.java
 package com.example.beautiful_barometer.ui;
 
+import android.annotation.SuppressLint;
 import android.Manifest;
 import android.animation.ValueAnimator;
 import android.content.BroadcastReceiver;
@@ -349,11 +350,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         IntentFilter filter = new IntentFilter(SensorService.ACTION_SAMPLE_BROADCAST);
-        if (Build.VERSION.SDK_INT >= 33) {
-            registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED);
-        } else {
-            registerReceiver(receiver, filter);
-        }
+        ContextCompat.registerReceiver(this, receiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
         receiverRegistered = true;
 
         prefs.registerOnSharedPreferenceChangeListener(prefListener);
@@ -533,6 +530,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("InflateParams")
     private void showForecastExplain() {
         AppEventLogger.log(this, "UI", "Open forecast explain sheet");
         BottomSheetDialog dialog = new BottomSheetDialog(this);

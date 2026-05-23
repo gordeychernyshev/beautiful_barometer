@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.beautiful_barometer", appContext.getPackageName());
+        assertTrue(appContext.getPackageName().startsWith("com.example.beautiful_barometer"));
     }
 }

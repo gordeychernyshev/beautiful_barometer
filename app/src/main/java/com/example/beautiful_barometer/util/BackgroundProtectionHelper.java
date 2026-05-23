@@ -9,15 +9,14 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
 
+import java.util.Locale;
+
 public final class BackgroundProtectionHelper {
 
     private BackgroundProtectionHelper() {
     }
 
     public static boolean isIgnoringBatteryOptimizations(Context ctx) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
         PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
         return pm != null && pm.isIgnoringBatteryOptimizations(ctx.getPackageName());
     }
@@ -41,7 +40,7 @@ public final class BackgroundProtectionHelper {
                 .append(vendor)
                 .append(".\n\n");
 
-        String lower = vendor.toLowerCase();
+        String lower = vendor.toLowerCase(Locale.ROOT);
         if (lower.contains("xiaomi") || lower.contains("redmi") || lower.contains("poco")) {
             sb.append("Для Xiaomi / MIUI / HyperOS:\n")
                     .append("• Безопасность → Автозапуск → включить для приложения.\n")
@@ -99,13 +98,7 @@ public final class BackgroundProtectionHelper {
     }
 
     public static void openBatteryOptimizationScreen(Context context) {
-        Intent i;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !isIgnoringBatteryOptimizations(context)) {
-            i = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
-            i.setData(Uri.parse("package:" + context.getPackageName()));
-        } else {
-            i = new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
-        }
+        Intent i = new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
     }

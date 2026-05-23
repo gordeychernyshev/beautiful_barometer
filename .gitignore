@@ -13,5 +13,7 @@ local.properties
 .externalNativeBuild
 .cxx
 app/build/
+/app/release/
 *.jks
 *.keystore
+keytrue

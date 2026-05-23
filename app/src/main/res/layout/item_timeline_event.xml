@@ -24,6 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="12dp">
@@ -42,7 +43,7 @@
                     android:layout_gravity="center"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_event_calibration"
-                    android:tint="?attr/colorOnSurface" />
+                    app:tint="?attr/colorOnSurface" />
             </FrameLayout>
 
             <LinearLayout
@@ -127,7 +128,7 @@
                     android:layout_gravity="end"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_chevron_right"
-                    android:tint="?attr/colorOnSurfaceVariant" />
+                    app:tint="?attr/colorOnSurfaceVariant" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

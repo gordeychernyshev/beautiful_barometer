@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
@@ -624,10 +623,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             batt.setOnPreferenceClickListener(p -> {
                 Context context = getContext();
                 if (context == null) return true;
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                    Toast.makeText(context, R.string.pref_battery_not_supported, Toast.LENGTH_SHORT).show();
-                    return true;
-                }
                 logUiAction("Battery optimization action opened");
                 if (BackgroundProtectionHelper.isIgnoringBatteryOptimizations(context)) {
                     openIgnoreBatteryList();
@@ -1018,11 +1013,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     private void updateBatteryWhitelistSummary(Preference p) {
         Context context = getContext();
         if (context == null) return;
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            p.setSummary(getString(R.string.pref_battery_not_supported));
-            p.setEnabled(false);
-            return;
-        }
         boolean on = BackgroundProtectionHelper.isIgnoringBatteryOptimizations(context);
         p.setSummary(getString(on ? R.string.pref_battery_summary_on : R.string.pref_battery_summary_off));
     }

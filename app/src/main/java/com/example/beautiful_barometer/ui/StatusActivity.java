@@ -175,7 +175,13 @@ public class StatusActivity extends AppCompatActivity {
                 notificationState.lastNotificationTitle,
                 DateFormat.format("dd.MM.yyyy HH:mm", new Date(notificationState.lastNotificationAt))
         );
-        tvNotifications.setText(notificationsFeatureLine + "\n" + permissionLine + "\n" + silentModeLine + "\n" + lastNotificationLine);
+        tvNotifications.setText(getString(
+                R.string.status_notifications_block_fmt,
+                notificationsFeatureLine,
+                permissionLine,
+                silentModeLine,
+                lastNotificationLine
+        ));
         tvBattery.setText(ignoreBattery
                 ? getString(R.string.status_battery_ok)
                 : getString(R.string.status_battery_restricted));
