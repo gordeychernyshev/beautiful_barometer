@@ -4,8 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import androidx.core.content.ContextCompat;
-
+import com.example.beautiful_barometer.util.ServiceController;
 
 public class BootReceiver extends BroadcastReceiver {
     @Override
@@ -21,8 +20,7 @@ public class BootReceiver extends BroadcastReceiver {
 
             android.content.SharedPreferences p = androidx.preference.PreferenceManager.getDefaultSharedPreferences(context);
             if (p.getBoolean("pref_autostart", false) && p.getBoolean("pref_recording_enabled", true)) {
-                Intent svc = new Intent(context, SensorService.class);
-                ContextCompat.startForegroundService(context, svc);
+                ServiceController.startRecording(context, "boot_receiver:" + a);
             }
         }
     }

@@ -252,6 +252,8 @@
     <string name="status_recording_disabled">Запись: выключена</string>
     <string name="status_service_running">Сервис: работает</string>
     <string name="status_service_stopped">Сервис: остановлен</string>
+    <string name="status_start_failure_none">Последний сбой запуска записи: нет</string>
+    <string name="status_start_failure_fmt">Последний сбой запуска записи: %1$s\n%2$s</string>
     <string name="status_notifications_ok">Уведомления: разрешены</string>
     <string name="status_notifications_missing">Уведомления: не разрешены</string>
     <string name="status_battery_ok">Батарея: приложение в исключениях или ограничений нет</string>

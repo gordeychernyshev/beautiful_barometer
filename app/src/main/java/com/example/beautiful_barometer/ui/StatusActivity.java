@@ -41,6 +41,7 @@ public class StatusActivity extends AppCompatActivity {
     private TextView tvSensor;
     private TextView tvRecording;
     private TextView tvService;
+    private TextView tvStartFailure;
     private TextView tvInterval;
     private TextView tvHistory;
     private TextView tvAdaptive;
@@ -74,6 +75,7 @@ public class StatusActivity extends AppCompatActivity {
         tvSensor = findViewById(R.id.tvStatusSensor);
         tvRecording = findViewById(R.id.tvStatusRecording);
         tvService = findViewById(R.id.tvStatusService);
+        tvStartFailure = findViewById(R.id.tvStatusStartFailure);
         tvInterval = findViewById(R.id.tvStatusInterval);
         tvHistory = findViewById(R.id.tvStatusHistory);
         tvAdaptive = findViewById(R.id.tvStatusAdaptive);
@@ -121,6 +123,15 @@ public class StatusActivity extends AppCompatActivity {
         tvService.setText(serviceRunning
                 ? getString(R.string.status_service_running)
                 : getString(R.string.status_service_stopped));
+        long startFailureAt = ServiceController.getLastStartFailureAt(this);
+        String startFailureReason = ServiceController.getLastStartFailureReason(this);
+        tvStartFailure.setText(startFailureAt <= 0L
+                ? getString(R.string.status_start_failure_none)
+                : getString(
+                R.string.status_start_failure_fmt,
+                DateFormat.format("dd.MM.yyyy HH:mm", new Date(startFailureAt)),
+                startFailureReason == null || startFailureReason.isEmpty() ? "—" : startFailureReason
+        ));
         tvInterval.setText(getReadableInterval(prefs.getString("pref_interval_ms", "1000")));
         tvHistory.setText(getReadableHistory(prefs.getString("pref_history_size", "10000")));
         tvAdaptive.setText(adaptiveEnabled

@@ -22,6 +22,8 @@ public final class ServiceController {
     public static final String PREF_SERVICE_RUNNING = "pref_service_running";
     public static final String PREF_ADAPTIVE_RECORDING_ENABLED = "pref_adaptive_recording_enabled";
     public static final String PREF_ADAPTIVE_RECORDING_MODE = "pref_adaptive_recording_mode";
+    public static final String PREF_LAST_START_FAILURE_AT = "pref_recording_start_failure_at";
+    public static final String PREF_LAST_START_FAILURE_REASON = "pref_recording_start_failure_reason";
 
     private ServiceController() {
     }
@@ -73,6 +75,45 @@ public final class ServiceController {
                 .apply();
     }
 
+    public static long getLastStartFailureAt(Context context) {
+        return prefs(context).getLong(PREF_LAST_START_FAILURE_AT, 0L);
+    }
+
+    public static String getLastStartFailureReason(Context context) {
+        return prefs(context).getString(PREF_LAST_START_FAILURE_REASON, "");
+    }
+
+    public static void clearLastStartFailure(Context context) {
+        prefs(context)
+                .edit()
+                .remove(PREF_LAST_START_FAILURE_AT)
+                .remove(PREF_LAST_START_FAILURE_REASON)
+                .apply();
+    }
+
+    public static void markStartFailure(Context context, String source, Throwable throwable) {
+        Context appContext = context.getApplicationContext();
+        String type = throwable != null ? throwable.getClass().getSimpleName() : "unknown";
+        String message = throwable != null ? throwable.getMessage() : "";
+        String reason = source + ": " + type;
+        if (message != null && !message.trim().isEmpty()) {
+            reason = reason + ": " + message.trim();
+        }
+        if (reason.length() > 260) {
+            reason = reason.substring(0, 260) + "...";
+        }
+
+        prefs(appContext)
+                .edit()
+                .putLong(PREF_LAST_START_FAILURE_AT, System.currentTimeMillis())
+                .putString(PREF_LAST_START_FAILURE_REASON, reason)
+                .apply();
+        setServiceRunning(appContext, false);
+        setAdaptiveMode(appContext, "stopped");
+        AppEventLogger.log(appContext, "RECORDING", "start failed; " + reason);
+        RecordingTileService.requestTileRefresh(appContext);
+    }
+
     public static boolean isServiceRunning(Context context) {
         Context appContext = context.getApplicationContext();
         try {
@@ -91,7 +132,11 @@ public final class ServiceController {
         return prefs(appContext).getBoolean(PREF_SERVICE_RUNNING, false);
     }
 
-    public static void startRecording(Context context) {
+    public static boolean startRecording(Context context) {
+        return startRecording(context, "user");
+    }
+
+    public static boolean startRecording(Context context, String source) {
         Context appContext = context.getApplicationContext();
         if (!DeviceCapabilities.hasBarometer(appContext)) {
             setRecordingEnabled(appContext, false);
@@ -99,13 +144,21 @@ public final class ServiceController {
             setAdaptiveMode(appContext, "stopped");
             AppEventLogger.log(appContext, "RECORDING", "start ignored: no barometer sensor");
             RecordingTileService.requestTileRefresh(appContext);
-            return;
+            return false;
         }
         setRecordingEnabled(appContext, true);
         setAdaptiveMode(appContext, isAdaptiveRecordingEnabled(appContext) ? "normal" : "fixed");
-        AppEventLogger.log(appContext, "RECORDING", "start requested; adaptive=" + isAdaptiveRecordingEnabled(appContext));
-        ContextCompat.startForegroundService(appContext, new Intent(appContext, SensorService.class));
+        AppEventLogger.log(appContext, "RECORDING", "start requested from " + source
+                + "; adaptive=" + isAdaptiveRecordingEnabled(appContext));
+        try {
+            ContextCompat.startForegroundService(appContext, new Intent(appContext, SensorService.class));
+            clearLastStartFailure(appContext);
+        } catch (RuntimeException e) {
+            markStartFailure(appContext, source, e);
+            return false;
+        }
         RecordingTileService.requestTileRefresh(appContext);
+        return true;
     }
 
     public static void stopRecording(Context context) {

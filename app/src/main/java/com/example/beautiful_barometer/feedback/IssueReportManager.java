@@ -284,6 +284,14 @@ public final class IssueReportManager {
         sb.append("Units: ").append(sp.getString("pref_units", "metric")).append("\n");
         sb.append("Recording enabled: ").append(ServiceController.isRecordingEnabled(context)).append("\n");
         sb.append("Service running: ").append(ServiceController.isServiceRunning(context)).append("\n");
+        long lastStartFailureAt = ServiceController.getLastStartFailureAt(context);
+        sb.append("Last start failure: ");
+        if (lastStartFailureAt > 0L) {
+            sb.append(DateFormat.format("yyyy-MM-dd HH:mm:ss", lastStartFailureAt)).append("\n");
+            sb.append("Last start failure reason: ").append(ServiceController.getLastStartFailureReason(context)).append("\n");
+        } else {
+            sb.append("none\n");
+        }
         sb.append("Adaptive recording: ").append(ServiceController.isAdaptiveRecordingEnabled(context)).append("\n");
         sb.append("Trip mode: ").append(TripModeController.isTripModeEnabled(context)).append("\n");
         sb.append("Forecast baseline: ").append(TripModeController.getForecastBaselineTimestamp(context)).append("\n");
@@ -338,12 +346,30 @@ public final class IssueReportManager {
                 new InputStreamReader(new FileInputStream(pending), StandardCharsets.UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                sb.append(line).append('\n');
+                String clean = sanitizeReportLine(line);
+                if (!clean.isEmpty()) {
+                    sb.append(clean).append('\n');
+                }
             }
         } catch (IOException e) {
             sb.append("Cannot read pending crash: ").append(e.getClass().getSimpleName()).append('\n');
         }
         sb.append('\n');
+    }
+
+    private static String sanitizeReportLine(String input) {
+        if (input == null) {
+            return "";
+        }
+        StringBuilder out = new StringBuilder(input.length());
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (c == '\u0000' || Character.isISOControl(c)) {
+                continue;
+            }
+            out.append(c);
+        }
+        return out.toString().trim();
     }
 
     private static void writePendingCrash(Context context, Thread thread, Throwable throwable) {

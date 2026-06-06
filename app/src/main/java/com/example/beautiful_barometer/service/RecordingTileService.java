@@ -40,7 +40,7 @@ public class RecordingTileService extends TileService {
         if (recordingActive) {
             ServiceController.stopRecording(appContext);
         } else {
-            ServiceController.startRecording(appContext);
+            ServiceController.startRecording(appContext, "quick_settings_tile");
         }
         updateTile();
     }
@@ -65,7 +65,9 @@ public class RecordingTileService extends TileService {
 
         Context appContext = getApplicationContext();
         boolean hasBarometer = DeviceCapabilities.hasBarometer(appContext);
-        boolean recordingEnabled = hasBarometer && ServiceController.isRecordingEnabled(appContext);
+        boolean recordingActive = hasBarometer
+                && ServiceController.isRecordingEnabled(appContext)
+                && ServiceController.isServiceRunning(appContext);
 
         String subtitle;
         String description;
@@ -73,7 +75,7 @@ public class RecordingTileService extends TileService {
             tile.setState(Tile.STATE_UNAVAILABLE);
             subtitle = getString(R.string.qs_recording_tile_unavailable);
             description = getString(R.string.qs_recording_tile_unavailable_desc);
-        } else if (recordingEnabled) {
+        } else if (recordingActive) {
             tile.setState(Tile.STATE_ACTIVE);
             subtitle = getString(R.string.qs_recording_tile_on);
             description = getString(R.string.qs_recording_tile_on_desc);

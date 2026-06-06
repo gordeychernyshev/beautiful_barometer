@@ -135,6 +135,26 @@ public class SensorService extends Service implements SensorEventListener {
         );
     }
 
+    private boolean tryStartAsForeground(Notification notification, String source) {
+        try {
+            startAsForeground(notification);
+            ServiceController.clearLastStartFailure(this);
+            ServiceController.setServiceRunning(this, true);
+            return true;
+        } catch (RuntimeException e) {
+            handleForegroundStartFailure(source, e);
+            return false;
+        }
+    }
+
+    private void handleForegroundStartFailure(String source, RuntimeException e) {
+        ServiceController.markStartFailure(this, "service_foreground:" + source, e);
+        PressureNotificationStateStore.clearTransientState(this);
+        AppEventLogger.log(this, "SERVICE", "Foreground start denied from " + source
+                + ": " + e.getClass().getSimpleName());
+        stopSelf();
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -155,7 +175,6 @@ public class SensorService extends Service implements SensorEventListener {
             return;
         }
 
-        ServiceController.setServiceRunning(this, true);
         syncAdaptiveModePreference();
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -168,14 +187,18 @@ public class SensorService extends Service implements SensorEventListener {
         }
 
         if (pressureSensor == null) {
-            startAsForeground(buildNotification(getString(R.string.no_barometer_sensor), "—"));
+            if (!tryStartAsForeground(buildNotification(getString(R.string.no_barometer_sensor), "—"), "no_sensor")) {
+                return;
+            }
             ServiceController.setServiceRunning(this, false);
             AppEventLogger.log(this, "SERVICE", "No barometer sensor, stopping");
             stopSelf();
             return;
         }
 
-        startAsForeground(buildNotification("--", "—"));
+        if (!tryStartAsForeground(buildNotification("--", "—"), "on_create")) {
+            return;
+        }
 
         executeIoSafely("SERVICE", () -> eventDao.insert(new EventSample("SERVICE_START", System.currentTimeMillis(), null)));
 

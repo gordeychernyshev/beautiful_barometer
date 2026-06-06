@@ -2,7 +2,6 @@ package com.example.beautiful_barometer.ui.onboarding;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ScrollView;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -39,7 +38,6 @@ public final class OnboardingPagerAdapter extends RecyclerView.Adapter<Onboardin
         holder.body.setText(page.bodyRes);
         holder.showPreview(page.previewType);
         holder.bindStaticPreviewData();
-        holder.scrollToDescriptionOnStart();
     }
 
     @Override
@@ -48,7 +46,6 @@ public final class OnboardingPagerAdapter extends RecyclerView.Adapter<Onboardin
     }
 
     static final class PageViewHolder extends RecyclerView.ViewHolder {
-        final ScrollView scrollView;
         final MaterialCardView previewShell;
         final View previewHome;
         final View previewGraph;
@@ -64,7 +61,6 @@ public final class OnboardingPagerAdapter extends RecyclerView.Adapter<Onboardin
 
         PageViewHolder(@NonNull View itemView) {
             super(itemView);
-            scrollView = (ScrollView) itemView;
             previewShell = itemView.findViewById(R.id.cardOnboardingPreviewShell);
             previewHome = itemView.findViewById(R.id.previewHome);
             previewGraph = itemView.findViewById(R.id.previewGraph);
@@ -96,13 +92,6 @@ public final class OnboardingPagerAdapter extends RecyclerView.Adapter<Onboardin
             if (previewTripGauge != null) {
                 previewTripGauge.setPressure(1011.8);
             }
-        }
-
-        void scrollToDescriptionOnStart() {
-            if (scrollView == null) {
-                return;
-            }
-            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_DOWN));
         }
     }
 }

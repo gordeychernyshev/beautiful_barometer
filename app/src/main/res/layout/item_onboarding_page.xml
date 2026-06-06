@@ -18,7 +18,7 @@
             android:id="@+id/cardOnboardingPreviewShell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
             app:cardCornerRadius="28dp"
             app:strokeColor="?attr/colorOutlineVariant"
             app:strokeWidth="1dp">
@@ -126,7 +126,7 @@
                                     android:layout_width="28dp"
                                     android:layout_height="28dp"
                                     android:src="@drawable/ic_trend_arrow"
-                                    app:tint="?attr/colorOutlineVariant" />
+                                    app:tint="?attr/colorPrimary" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
                                     android:layout_height="28dp"
                                     android:rotation="180"
                                     android:src="@drawable/ic_trend_arrow"
-                                    app:tint="?attr/colorOutlineVariant" />
+                                    app:tint="?attr/colorPrimary" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -536,7 +536,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorSurfaceContainerLow"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -910,7 +910,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorSurfaceContainerLow"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -1041,7 +1041,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorSurfaceContainerLow"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -1143,7 +1143,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorSurfaceContainerLow"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -1238,7 +1238,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorSurfaceContainerLow"
                         android:orientation="vertical">
 
                         <LinearLayout

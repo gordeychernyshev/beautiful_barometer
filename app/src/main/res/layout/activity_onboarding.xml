@@ -6,7 +6,8 @@
     android:paddingStart="20dp"
     android:paddingTop="16dp"
     android:paddingEnd="20dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:background="?attr/colorSurface">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSkipOnboarding"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="?attr/colorOnSurfaceVariant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSkipOnboarding" />
 

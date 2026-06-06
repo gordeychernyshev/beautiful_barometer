@@ -518,7 +518,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             boolean enabled = Boolean.TRUE.equals(newValue);
             AppEventLogger.log(context, "SETTINGS", "Recording enabled=" + enabled);
             if (enabled) {
-                ServiceController.startRecording(context);
+                ServiceController.startRecording(context, "settings");
             } else {
                 ServiceController.stopRecording(context);
                 PressureNotificationStateStore.clearTransientState(context);

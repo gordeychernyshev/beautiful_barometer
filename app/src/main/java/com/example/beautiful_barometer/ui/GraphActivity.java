@@ -189,7 +189,7 @@ public class GraphActivity extends AppCompatActivity {
     private void setupEmptyActions() {
         btnStartRecording.setOnClickListener(v -> {
             AppEventLogger.log(this, "GRAPH", "start recording from empty state");
-            ServiceController.startRecording(this);
+            ServiceController.startRecording(this, "graph_activity");
             loadAndRender();
         });
         btnGo1h.setOnClickListener(v -> {

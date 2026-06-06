@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         if (DeviceCapabilities.hasBarometer(this)) {
             if (ServiceController.isRecordingEnabled(this) && !ServiceController.isServiceRunning(this)) {
                 ensureNotificationPermission();
-                ServiceController.startRecording(this);
+                ServiceController.startRecording(this, "main_activity");
             }
         } else {
             ServiceController.setRecordingEnabled(this, false);
